@@ -1,0 +1,57 @@
+/* Layout.css */
+.layout {
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  
+  .sidebar-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .logo-text {
+    font-size: 1.2rem;
+  }
+  
+  .content {
+    flex: 1;
+    /* padding: 20px; */
+  }
+  
+  .profile-dropdown,
+  .additional-filters {
+    margin-top: 20px;
+  }
+  
+  .filter {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  .filter h5 {
+    margin-bottom: 10px;
+  }
+  
+  .filter-button {
+    margin-top: 10px;
+  }
+  
+  /* Add more styling as needed */
+  
