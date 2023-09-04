@@ -21,7 +21,6 @@ export const productListAsync = createAsyncThunk(
   "product/getInitialState",
   (args, thunkApi) => {
     let prodQuery = collection(db, "ProductsList");
-    
 
     const unsubscribe = onSnapshot(prodQuery, (snapShot) => {
       let productList = snapShot.docs.map((doc) => ({
@@ -29,10 +28,36 @@ export const productListAsync = createAsyncThunk(
         ...doc.data(),
       }));
 
-
       thunkApi.dispatch(actions.setInitialState(productList));
     });
     return () => unsubscribe();
+  }
+);
+
+export const addNewProductAsync = createAsyncThunk(
+  "product/newProduct",
+  async (product, thunkApi) => {
+    let productData = {
+      brand: product.brand,
+      category: product.category,
+      image: product.image,
+      price: product.price,
+      product: product.products,
+      type: product.type,
+    };
+    const docRef = doc(collection(db, "ProductsList"));
+    await setDoc(docRef, productData);
+    toast("Product Created Successfully !", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      type: "success",
+    });
   }
 );
 

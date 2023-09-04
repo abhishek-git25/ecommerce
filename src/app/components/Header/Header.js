@@ -82,11 +82,15 @@ const Header = () => {
                 className="custom-profile-dropdown dropdown-menu-left me-5 position-static mt-1"
               >
                 <NavDropdown.Item href="/myorders">My Orders</NavDropdown.Item>
+                <NavDropdown.Item onClick={() => navigate('/addProducts')}>
+                    Add Products
+                  </NavDropdown.Item>
                 <NavDropdown.Divider />
                 {userData ? (
                   <NavDropdown.Item onClick={() => logout()}>
                     Logout
                   </NavDropdown.Item>
+                  
                 ) : (
                   <NavDropdown.Item onClick={() => navigate("/signIn")}>
                     Login

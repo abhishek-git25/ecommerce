@@ -11,6 +11,7 @@ import MyOrder from "./app/pages/MyOrder";
 import CustomSearchContext from "./app/Context/searchContext";
 import FilterSearchContext from "./app/Context/filterContext";
 import { store } from "./redux/store";
+import AddProducts from "./app/pages/AddProducts";
 
 function App() {
   const browserRouter = createBrowserRouter([
@@ -35,6 +36,10 @@ function App() {
           path: "myorders",
           element: <MyOrder />,
         },
+        {
+          path : 'addProducts',
+          element : <AddProducts/>
+        }
       ],
     },
   ]);
